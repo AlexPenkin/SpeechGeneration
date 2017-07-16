@@ -1,0 +1,23 @@
+{
+  "name": "speech_synth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "koa": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexPenkin/SpeechGeneration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexPenkin/SpeechGeneration/issues"
+  },
+  "homepage": "https://github.com/AlexPenkin/SpeechGeneration#readme"
+}
