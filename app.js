@@ -15,17 +15,19 @@ app
 
   router.get('/', async function (ctx, next) {
     const id = guidGen();
+    const text = ctx.query.text;
+    const voiceId = ctx.query.voice_id;
+    ctx.type = 'audio/mpeg';
+    ctx.res.setHeader('Cache-Control', 'no-cache ');
     try {
-        const buf = await synthSpeech();
+        const buf = await synthSpeech(text, voiceId);
         await createFile(buf, id);
         await send(ctx, `./speech${id}.mp3`);
         await removeFile(`./speech${id}.mp3`);
     } catch (e) {
         console.log(e);
         ctx.body = e.message;
-    }        
+    }
   });
 
 app.listen(8888);
-
-  
