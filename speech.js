@@ -15,6 +15,7 @@ const synthSpeech = () => new Promise((resolve, reject) => {
     Polly.synthesizeSpeech(params, (err, data) => {
         if (err) {
             console.log(err.code)
+            reject(err);
         } else if (data) {
             if (data.AudioStream instanceof Buffer) {
                 Fs.writeFile("./speech.mp3", data.AudioStream, function (err) {
