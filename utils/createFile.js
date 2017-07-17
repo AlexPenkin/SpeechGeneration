@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-const createFile = (buffer, id) => {
+const createFile = (path, buffer, id) => {
     return new Promise(function (resolve, reject) {
-        fs.writeFile(`./speech${id}.mp3`, buffer, (err) => {
+        fs.writeFile(path, buffer, (err) => {
             if (err) {
                 console.log(err);
                 return reject(err);
