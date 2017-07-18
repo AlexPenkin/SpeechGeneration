@@ -3,7 +3,6 @@ var Router = require('koa-router');
 var app = new Koa();
 var router = new Router();
 const send = require('koa-send');
-const etag = require('koa-etag');
 
 const synthSpeech = require('./speech');
 const guidGen = require('./utils/GUIDGenerator');
@@ -15,7 +14,6 @@ const editMP3Tags = require('./utils/editMP3Tags');
 
 app
   .use(router.routes())
-  .use(etag())
   .use(router.allowedMethods());
 
 router.get('/', async function (ctx, next) {
